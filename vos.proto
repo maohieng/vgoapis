@@ -1,8 +1,8 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
-package vgo.core;
-option go_package = "vgo.com/pb/core";
+package vgo.api;
+option go_package = "github.com/maohieng/vgoapis";
 
 message Price {
   double amount = 1;
