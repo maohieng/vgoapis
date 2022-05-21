@@ -1,0 +1,22 @@
+syntax = "proto3";
+package vgo.api;
+option go_package = "vgo.com/pb/core";
+
+message Price {
+  double amount = 1;
+  string currency = 2;
+}
+message Discount {
+  Price      price = 1;
+  int32   percentage = 2;
+}
+
+message Image {
+  string ref_url = 1;
+  string thumbnail = 2;
+}
+
+message Video  {
+  string ref_url = 1;
+  string thumbnail = 2;
+}
