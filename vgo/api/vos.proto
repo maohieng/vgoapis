@@ -1,5 +1,7 @@
 syntax = "proto3";
-package vgo.api;
+import "google/protobuf/timestamp.proto";
+
+package vgo.core;
 option go_package = "vgo.com/pb/core";
 
 message Price {
@@ -19,4 +21,26 @@ message Image {
 message Video  {
   string ref_url = 1;
   string thumbnail = 2;
+}
+
+message Address {
+  string addr1 = 1;
+  string addr2 = 2;
+  string addr3 = 3;
+  string latitude = 4;
+  string longitude = 5;
+  string village = 6;
+  string commune = 7;
+  string district = 8;
+  string province = 9;
+  string city = 10;
+  string postal = 11;
+  string country = 12;
+}
+
+message SaleBlock  {
+  string    message_kh = 1;
+  string    message_en = 2;
+  google.protobuf.Timestamp from = 3;
+  google.protobuf.Timestamp to = 4;
 }

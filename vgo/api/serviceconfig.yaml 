@@ -4,14 +4,14 @@ name: serviceconfig.vgoapis.com
 title: Service Config API
 
 types:
-- name: vgo.api.Price
-- name: vgo.api.Discount
-- name: vgo.api.Image
-- name: vgo.api.Video
+- name: vgo.core.Price
+- name: vgo.core.Discount
+- name: vgo.core.Image
+- name: vgo.core.Video
 
 enums:
-- name: vgo.api.ErrorReason
-- name: vgo.api.FieldBehavior
+- name: vgo.core.ErrorReason
+- name: vgo.core.FieldBehavior
 
 documentation:
   summary: Lets you define and config your API service.
