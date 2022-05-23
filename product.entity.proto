@@ -1,0 +1,56 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "vos.proto";
+
+package vgo.api.entity;
+option go_package = "github.com/maohieng/vgoapis/entity";
+
+message Product {
+  string                    id = 1;
+  string                    name_kh = 2;
+  string                    name_en = 3;
+  string                    name_xx = 4;
+  string                    dscrt_kh = 5;
+  string                    dscrt_en = 6;
+  string                    dscrt_xx = 7;
+  string                    condition = 8;
+  string                    category_id = 9;
+  string                    model_name = 10;
+  string                    applicable_gender = 11;
+  string                    brand_name = 12;
+  string                    business_id = 13;
+  string                    release_year = 14;
+  string                    owner_id = 15;
+  int32                     vat = 16;
+  bool                      active = 17;
+  string                    created_by = 18;
+  string                    updated_by = 19;
+  google.protobuf.Timestamp updated_at = 20;
+  google.protobuf.Timestamp created_at = 21;
+  vgo.api.Video            video = 22;
+  vgo.api.Image            images = 23;
+  vgo.api.SaleBlock        saleBlocking = 24;
+  vgo.api.Address          address = 25;
+  vgo.api.Discount         discount = 26;
+  vgo.api.Price            price = 28;
+  repeated Topping                   toppings = 29;
+  repeated Size                      sizes = 30;
+  repeated Modifier                  modifiers = 31;
+}
+message Modifier {
+  string id = 1;
+  string name_kh = 2;
+  string name_en = 3;
+}
+message Size {
+  string         id = 1;
+  string         name_kh = 2;
+  string         name_en = 3;
+  vgo.api.Price price = 4;
+}
+message Topping {
+  string         id = 1;
+  string         name_kh = 2;
+  string         name_en = 3;
+  vgo.api.Price Price = 4;
+}
