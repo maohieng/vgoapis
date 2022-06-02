@@ -1,0 +1,39 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "vos.proto";
+
+package vgo.api;
+option go_package = "github.com/maohieng/vgoapis";
+
+message ProductCategory {
+  int64  id = 1;
+  string      nameKh = 2;
+  string   nameEn = 3;
+  string      nameXx = 4;
+  int64     parentID = 5;
+  vgo.api.Image image = 6;
+  int32      ordering = 7;
+  bool       active = 8;
+  string      createdBy = 9;
+  string      updatedBy = 10;
+  google.protobuf.Timestamp   createdAt = 11;
+  google.protobuf.Timestamp   updatedAt = 12;
+}
+
+message Modifier {
+  string id = 1;
+  string name_kh = 2;
+  string name_en = 3;
+}
+message Size {
+  string         id = 1;
+  string         name_kh = 2;
+  string         name_en = 3;
+  vgo.api.Price price = 4;
+}
+message Topping {
+  string         id = 1;
+  string         name_kh = 2;
+  string         name_en = 3;
+  vgo.api.Price Price = 4;
+}

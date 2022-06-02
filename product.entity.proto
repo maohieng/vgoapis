@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 import "vos.proto";
+import "product_vo.entity.proto";
 
 package vgo.api;
 option go_package = "github.com/maohieng/vgoapis";
@@ -39,21 +40,4 @@ message Product {
   repeated Topping                   toppings = 32;
   repeated Size                      sizes = 33;
   repeated Modifier                  modifiers = 34;
-}
-message Modifier {
-  string id = 1;
-  string name_kh = 2;
-  string name_en = 3;
-}
-message Size {
-  string         id = 1;
-  string         name_kh = 2;
-  string         name_en = 3;
-  vgo.api.Price price = 4;
-}
-message Topping {
-  string         id = 1;
-  string         name_kh = 2;
-  string         name_en = 3;
-  vgo.api.Price Price = 4;
 }
