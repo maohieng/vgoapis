@@ -47,3 +47,14 @@ message Business {
   google.protobuf.Timestamp updatedAt = 39;
   google.protobuf.Timestamp createdAt = 40;
 }
+
+message BusinessRole {
+  int64     id = 1;
+  string    userID = 2;
+  string    businessID = 3;
+  string    role = 4;
+  string    createdBy = 5;
+  string    updatedBy = 6;
+  google.protobuf.Timestamp createdAt = 7;
+  google.protobuf.Timestamp updatedAt = 8;
+}
