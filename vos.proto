@@ -44,3 +44,13 @@ message SaleBlock  {
   google.protobuf.Timestamp from = 3;
   google.protobuf.Timestamp to = 4;
 }
+
+message OpeningHour {
+  string day = 1;
+  repeated OpeningTime times = 2;
+}
+
+message OpeningTime {
+  string opensAt = 1;
+  string closesAt = 2;
+}

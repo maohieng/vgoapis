@@ -447,6 +447,116 @@ func (x *SaleBlock) GetTo() *timestamppb.Timestamp {
 	return nil
 }
 
+type OpeningHour struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Day   string         `protobuf:"bytes,1,opt,name=day,proto3" json:"day,omitempty"`
+	Times []*OpeningTime `protobuf:"bytes,2,rep,name=times,proto3" json:"times,omitempty"`
+}
+
+func (x *OpeningHour) Reset() {
+	*x = OpeningHour{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_vos_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *OpeningHour) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OpeningHour) ProtoMessage() {}
+
+func (x *OpeningHour) ProtoReflect() protoreflect.Message {
+	mi := &file_vos_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OpeningHour.ProtoReflect.Descriptor instead.
+func (*OpeningHour) Descriptor() ([]byte, []int) {
+	return file_vos_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *OpeningHour) GetDay() string {
+	if x != nil {
+		return x.Day
+	}
+	return ""
+}
+
+func (x *OpeningHour) GetTimes() []*OpeningTime {
+	if x != nil {
+		return x.Times
+	}
+	return nil
+}
+
+type OpeningTime struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	OpensAt  string `protobuf:"bytes,1,opt,name=opensAt,proto3" json:"opensAt,omitempty"`
+	ClosesAt string `protobuf:"bytes,2,opt,name=closesAt,proto3" json:"closesAt,omitempty"`
+}
+
+func (x *OpeningTime) Reset() {
+	*x = OpeningTime{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_vos_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *OpeningTime) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OpeningTime) ProtoMessage() {}
+
+func (x *OpeningTime) ProtoReflect() protoreflect.Message {
+	mi := &file_vos_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OpeningTime.ProtoReflect.Descriptor instead.
+func (*OpeningTime) Descriptor() ([]byte, []int) {
+	return file_vos_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *OpeningTime) GetOpensAt() string {
+	if x != nil {
+		return x.OpensAt
+	}
+	return ""
+}
+
+func (x *OpeningTime) GetClosesAt() string {
+	if x != nil {
+		return x.ClosesAt
+	}
+	return ""
+}
+
 var File_vos_proto protoreflect.FileDescriptor
 
 var file_vos_proto_rawDesc = []byte{
@@ -500,9 +610,18 @@ var file_vos_proto_rawDesc = []byte{
 	0x74, 0x61, 0x6d, 0x70, 0x52, 0x04, 0x66, 0x72, 0x6f, 0x6d, 0x12, 0x2a, 0x0a, 0x02, 0x74, 0x6f,
 	0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61,
-	0x6d, 0x70, 0x52, 0x02, 0x74, 0x6f, 0x42, 0x1d, 0x5a, 0x1b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x61, 0x6f, 0x68, 0x69, 0x65, 0x6e, 0x67, 0x2f, 0x76, 0x67,
-	0x6f, 0x61, 0x70, 0x69, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6d, 0x70, 0x52, 0x02, 0x74, 0x6f, 0x22, 0x4b, 0x0a, 0x0b, 0x4f, 0x70, 0x65, 0x6e, 0x69, 0x6e,
+	0x67, 0x48, 0x6f, 0x75, 0x72, 0x12, 0x10, 0x0a, 0x03, 0x64, 0x61, 0x79, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x03, 0x64, 0x61, 0x79, 0x12, 0x2a, 0x0a, 0x05, 0x74, 0x69, 0x6d, 0x65, 0x73,
+	0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x76, 0x67, 0x6f, 0x2e, 0x61, 0x70, 0x69,
+	0x2e, 0x4f, 0x70, 0x65, 0x6e, 0x69, 0x6e, 0x67, 0x54, 0x69, 0x6d, 0x65, 0x52, 0x05, 0x74, 0x69,
+	0x6d, 0x65, 0x73, 0x22, 0x43, 0x0a, 0x0b, 0x4f, 0x70, 0x65, 0x6e, 0x69, 0x6e, 0x67, 0x54, 0x69,
+	0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6f, 0x70, 0x65, 0x6e, 0x73, 0x41, 0x74, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x6f, 0x70, 0x65, 0x6e, 0x73, 0x41, 0x74, 0x12, 0x1a, 0x0a, 0x08,
+	0x63, 0x6c, 0x6f, 0x73, 0x65, 0x73, 0x41, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08,
+	0x63, 0x6c, 0x6f, 0x73, 0x65, 0x73, 0x41, 0x74, 0x42, 0x1d, 0x5a, 0x1b, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x61, 0x6f, 0x68, 0x69, 0x65, 0x6e, 0x67, 0x2f,
+	0x76, 0x67, 0x6f, 0x61, 0x70, 0x69, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -517,7 +636,7 @@ func file_vos_proto_rawDescGZIP() []byte {
 	return file_vos_proto_rawDescData
 }
 
-var file_vos_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_vos_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_vos_proto_goTypes = []interface{}{
 	(*Price)(nil),                 // 0: vgo.api.Price
 	(*Discount)(nil),              // 1: vgo.api.Discount
@@ -525,17 +644,20 @@ var file_vos_proto_goTypes = []interface{}{
 	(*Video)(nil),                 // 3: vgo.api.Video
 	(*Address)(nil),               // 4: vgo.api.Address
 	(*SaleBlock)(nil),             // 5: vgo.api.SaleBlock
-	(*timestamppb.Timestamp)(nil), // 6: google.protobuf.Timestamp
+	(*OpeningHour)(nil),           // 6: vgo.api.OpeningHour
+	(*OpeningTime)(nil),           // 7: vgo.api.OpeningTime
+	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
 }
 var file_vos_proto_depIdxs = []int32{
 	0, // 0: vgo.api.Discount.price:type_name -> vgo.api.Price
-	6, // 1: vgo.api.SaleBlock.from:type_name -> google.protobuf.Timestamp
-	6, // 2: vgo.api.SaleBlock.to:type_name -> google.protobuf.Timestamp
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	8, // 1: vgo.api.SaleBlock.from:type_name -> google.protobuf.Timestamp
+	8, // 2: vgo.api.SaleBlock.to:type_name -> google.protobuf.Timestamp
+	7, // 3: vgo.api.OpeningHour.times:type_name -> vgo.api.OpeningTime
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_vos_proto_init() }
@@ -616,6 +738,30 @@ func file_vos_proto_init() {
 				return nil
 			}
 		}
+		file_vos_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*OpeningHour); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_vos_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*OpeningTime); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -623,7 +769,7 @@ func file_vos_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_vos_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -1,0 +1,49 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "vos.proto";
+
+package vgo.api;
+option go_package = "github.com/maohieng/vgoapis";
+
+message Business {
+  string                    id = 1;
+  string                    nameKh = 2;
+  string                    nameEn = 3;
+  string                    nameXx = 4;
+  string                    dscrtKh = 5;
+  string                    dscrtEn = 6;
+  string                    dscrtXx = 7;
+  google.protobuf.Timestamp openingDate = 8;
+  repeated vgo.api.Image       images = 9;
+  repeated string           categories = 10;
+  repeated string           tags = 11;
+  repeated vgo.api.OpeningHour openingHours = 12;
+  repeated string           ownerIds = 13;
+  repeated string           managerIds = 14;
+  repeated string           phones = 15;
+  string             facebook = 16;
+  string             twitter = 17;
+  string             youtube = 18;
+  string             website = 19;
+  repeated string           emails = 20;
+  double            latitude = 21;
+  double            longitude = 22;
+  string             addr1 = 23;
+  string             addr2 = 24;
+  string             addr3 = 25;
+  string             village = 26;
+  string             commune = 27;
+  string             district = 28;
+  string             province = 29;
+  string             city = 30;
+  string             postal = 31;
+  string             country = 32;
+  string             reviewStatus = 33;
+  float            reviewStars = 34;
+  int32              reviewNumb = 35;
+  bool                      active = 36;
+  string                    createdBy = 37;
+  string                    updatedBy = 38;
+  google.protobuf.Timestamp updatedAt = 39;
+  google.protobuf.Timestamp createdAt = 40;
+}
