@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package vgo.api;
+option go_package = "github.com/maohieng/vgoapis/vgo/api";
+
+message GetByIdRequest {
+  string id = 1;
+}
+
+message GetByPhoneRequest {
+  string phone = 1;
+}
+
+message GetByEmailRequest {
+  string email = 1;
+}
+
+message CreateRequest {
+  string id = 1;
+  string role = 2;
+  string firstName = 3;
+  string lastName = 4;
+  string email = 5;
+  string phone = 6;
+  string picture = 7;
+  string providerId = 8;
+  bool verified = 9;
+}
+
+message CreateReply {
+  int64 timestamp = 1;
+}
