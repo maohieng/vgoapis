@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package vgo.protobuf;
+
+option go_package = "github.com/maohieng/vgoapis/vgo/protobuf";
+
+message Media {
+  string url_ref = 1;
+  string thumbnail = 2;
+}
